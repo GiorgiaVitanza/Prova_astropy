@@ -4,10 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Scarica il file
-file = download_file("http://data.astropy.org/tutorials/FITS-images/HorseHead.fits", cache=True)
+#file = download_file("http://data.astropy.org/tutorials/FITS-images/HorseHead.fits", cache=True)
 
 # Apri il file FITS
-hdul = fits.open(file)
+hdul = fits.open('C:/Users/316970/ProgettiVsCode/Prova_astropy/HorseHead.fits')
 hdul.info()
 data0 =hdul[0].data
 header = hdul[0].header         
@@ -29,13 +29,8 @@ data[data > threshold] = threshold
 plt.imshow(data, cmap='gray', origin='lower')
 plt.colorbar(label='Intensità normalizzata')
 plt.title('Immagine FITS Normalizzata')
-
-
-# === 5. Visualizza l'immagine ===
-plt.imshow(data0,cmap='gray', origin='lower')
-plt.colorbar(label='Intensità normalizzata')
-plt.title('Immagine FITS non normalizzata   ')
 plt.show()
+
 
 # === 6. Chiudi il file FITS ===
 hdul.close()
