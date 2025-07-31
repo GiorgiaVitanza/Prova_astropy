@@ -7,6 +7,11 @@ cube_url=    "http://data.astropy.org/tutorials/FITS-cubes/reduced_TAN_C14.fits"
 
 filename = download_file(cube_url, cache=True, show_progress=True)
 
+# or open the data cube from a local file 
+# uncomment the following line to use a local file
+
+# filename = "Prova_astropy\l1448_13co.fits"
+
 hdul = fits.open(filename)
 hdul.info()
 
